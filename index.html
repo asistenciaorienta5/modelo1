@@ -5,35 +5,29 @@
   <title>Live2D funcionando</title>
   <style>
     body { margin: 0; background: #111; }
+    canvas { position: fixed; right: 0; bottom: 0; }
   </style>
 </head>
 <body>
 
-  <!-- Carga la librería correcta -->
-  <script src="https://unpkg.com/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+  <!-- PIXI.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
+  <!-- Live2D plugin -->
+  <script src="https://unpkg.com/pixi-live2d-display/dist/index.min.js"></script>
 
-  <!-- Inicializa el modelo -->
   <script>
-    L2Dwidget.init({
-      model: {
-        jsonPath: "hiyori-main/hiyori_free_t08.model3.json",  // Asegúrate de que esta ruta sea correcta
-        scale: 1
-      },
-      display: {
-        position: "right",
-        width: 150,
-        height: 300,
-        hOffset: 0,
-        vOffset: -20
-      },
-      mobile: {
-        show: true,
-        scale: 0.5
-      },
-      react: {
-        opacityDefault: 1,
-        opacityOnHover: 1
-      }
+    const app = new PIXI.Application({ 
+      view: document.createElement("canvas"), 
+      autoStart: true, 
+      resizeTo: window 
+    });
+    document.body.appendChild(app.view);
+
+    PIXI.live2d.Live2DModel.from("hiyori-main/hiyori_free_t08.model3.json").then(model => {
+      model.scale.set(0.2);   // escala
+      model.x = window.innerWidth - 250;
+      model.y = window.innerHeight - 400;
+      app.stage.addChild(model);
     });
   </script>
 
