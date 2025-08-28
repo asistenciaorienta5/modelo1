@@ -31,7 +31,7 @@
     document.body.appendChild(app.view);
 
     // Cargar modelo Live2D (Cubism 3/4)
-    PIXI.live2d.Live2DModel.from("hiyori-main/hiyori_free_t08.model3.json").then(model => {
+    PIXI.live2d.Live2DModel.from("modelo.model3.json").then(model => {
       model.scale.set(0.25);
       model.x = window.innerWidth - 250;
       model.y = window.innerHeight - 400;
@@ -44,6 +44,7 @@
 
 </body>
 </html>
+
 
 
 
