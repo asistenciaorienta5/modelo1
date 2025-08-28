@@ -2,26 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Modelo Live2D</title>
+  <title>Live2D funcionando</title>
   <style>
     body { margin: 0; background: #111; }
   </style>
 </head>
 <body>
-  <!-- Live2D Widget Core -->
-  <script src="https://unpkg.com/live2d-widget-core@latest/lib/L2Dwidget.min.js"></script>
 
+  <!-- Carga la librería correcta -->
+  <script src="https://unpkg.com/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+
+  <!-- Inicializa el modelo -->
   <script>
     L2Dwidget.init({
       model: {
-        jsonPath: "hiyori-main/hiyori_free_t08.model3.json", // Asegúrate de que esta ruta sea correcta
+        jsonPath: "hiyori-main/hiyori_free_t08.model3.json",  // Asegúrate de que esta ruta sea correcta
         scale: 1
       },
       display: {
         position: "right",
         width: 150,
         height: 300,
-        hOffset: 20,
+        hOffset: 0,
         vOffset: -20
       },
       mobile: {
@@ -34,8 +36,6 @@
       }
     });
   </script>
+
 </body>
 </html>
-
-
-
