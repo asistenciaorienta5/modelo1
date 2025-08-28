@@ -7,13 +7,7 @@
     ],
     "DisplayInfo": "modelo.cdi3.json"
   },
-  "Motions": {
-    "tap": [
-      {
-        "File": "animacion.motion3.json"
-      }
-    ]
-  },
+  "Motions": [],
   "Groups": [],
   "HitAreas": [],
   "Layout": {
