@@ -2,12 +2,24 @@
   "Version": 3,
   "FileReferences": {
     "Moc": "modelo.moc3",
-    "Textures": ["modelo.2048/texture_00.png"],
+    "Textures": [
+      "modelo.2048/texture_00.png"
+    ],
     "DisplayInfo": "modelo.cdi3.json"
   },
   "Motions": {
     "tap": [
-      { "File": "animacion.motion3.json" }
+      {
+        "File": "animacion.motion3.json"
+      }
     ]
+  },
+  "Groups": [],
+  "HitAreas": [],
+  "Layout": {
+    "CenterX": 0.0,
+    "CenterY": 0.0,
+    "Width": 2.0,
+    "Height": 2.0
   }
 }
