@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Live2D Animación al Clic</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #222; }
+    canvas { position: fixed; bottom: 20px; right: 20px; }
+  </style>
+</head>
+<body>
+  <canvas id="live2dCanvas" width="300" height="400"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/live2d-widget-core@latest/dist/live2d.min.js"></script>
+
+  <script>
+    const app = new PIXI.Application({
+      view: document.getElementById('live2dCanvas'),
+      autoStart: true,
+      backgroundAlpha: 0,
+      resizeTo: window
+    });
+
+    Live2D.init(app);
+
+    Live2D.loadModel({
+      model: {
+        json: "https://github.com/asistenciaorienta5/modelo1/modelo.model3.json"
+      }
+    }).then(model => {
+      app.stage.addChild(model);
+
+      model.interactive = true;
+      model.buttonMode = true;
+
+      model.on('pointerdown', () => {
+        model.motion("tap");
+      });
+    });
+  </script>
+</body>
+</html>
