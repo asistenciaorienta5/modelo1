@@ -2,15 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Live2D Animación al Clic</title>
+  <title>Modelo Live2D</title>
   <style>
-    body { margin: 0; overflow: hidden; background: #222; }
+    body { margin: 0; background: #111; }
     canvas { position: fixed; bottom: 20px; right: 20px; }
   </style>
 </head>
 <body>
   <canvas id="live2dCanvas" width="300" height="400"></canvas>
 
+  <!-- PIXI.js y Live2D Widget Core -->
   <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/live2d-widget-core@latest/dist/live2d.min.js"></script>
 
@@ -26,11 +27,10 @@
 
     Live2D.loadModel({
       model: {
-        json: "https://github.com/asistenciaorienta5/modelo1/modelo.model3.json"
+        json: "modelo.model3.json"
       }
     }).then(model => {
       app.stage.addChild(model);
-
       model.interactive = true;
       model.buttonMode = true;
 
