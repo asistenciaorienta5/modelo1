@@ -1,29 +1,13 @@
 {
-	"Version": 3,
-	"FileReferences": {
-		"Moc": "https://github.com/asistenciaorienta5/modelo1/modelo.moc3",
-		"Textures": [
-			"https://github.com/asistenciaorienta5/modelo1/modelo.2048/texture_00.png"
-		],
-		"DisplayInfo": "https://github.com/asistenciaorienta5/modelo1/modelo.cdi3.json"
-	},
-	  "Motions": {
-	    "tap": [
-	      {
-	        "File": "https://github.com/asistenciaorienta5/modelo1/animacion.motion3.json"
-	      }
-	    ]
-	  },
-	"Groups": [
-		{
-			"Target": "Parameter",
-			"Name": "EyeBlink",
-			"Ids": []
-		},
-		{
-			"Target": "Parameter",
-			"Name": "LipSync",
-			"Ids": []
-		}
-	]
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "modelo.moc3",
+    "Textures": ["modelo.2048/texture_00.png"],
+    "DisplayInfo": "modelo.cdi3.json"
+  },
+  "Motions": {
+    "tap": [
+      { "File": "animacion.motion3.json" }
+    ]
+  }
 }
