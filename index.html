@@ -25,16 +25,17 @@
     });
     document.body.appendChild(app.view);
 
-    // Cargar modelo Live2D (Cubism 3+)
+    // Cargar modelo Live2D (Cubism 3/4)
     PIXI.live2d.Live2DModel.from("hiyori-main/hiyori_free_t08.model3.json").then(model => {
-      model.scale.set(0.25);   // escala
-      model.x = window.innerWidth - 250;
-      model.y = window.innerHeight - 400;
+      model.scale.set(0.25);   // escala del modelo
+      model.x = window.innerWidth - 250; // posición en X
+      model.y = window.innerHeight - 400; // posición en Y
 
       app.stage.addChild(model);
+    }).catch(err => {
+      console.error("Error cargando modelo:", err);
     });
   </script>
 
 </body>
 </html>
-
