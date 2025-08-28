@@ -9,7 +9,6 @@
   </style>
 </head>
 <body>
-
   <!-- PIXI.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
 
@@ -32,7 +31,7 @@
 
     // Cargar modelo Live2D (Cubism 3/4)
     PIXI.live2d.Live2DModel.from("modelo.model3.json").then(model => {
-      model.scale.set(0.25);
+      model.scale.set(1);
       model.x = window.innerWidth - 250;
       model.y = window.innerHeight - 400;
 
@@ -41,10 +40,5 @@
       console.error("Error cargando modelo:", err);
     });
   </script>
-
 </body>
 </html>
-
-
-
-
