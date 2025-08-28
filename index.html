@@ -12,8 +12,8 @@
 
   <!-- PIXI.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
-  <!-- Librería Live2D -->
-  <script src="https://unpkg.com/pixi-live2d-display/dist/index.min.js"></script>
+  <!-- Versión de pixi-live2d-display con soporte Cubism 3+ -->
+  <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.4.0/dist/index.min.js"></script>
 
   <script>
     // Crear la app PIXI
@@ -27,7 +27,7 @@
 
     // Cargar modelo Live2D (Cubism 3+)
     PIXI.live2d.Live2DModel.from("hiyori-main/hiyori_free_t08.model3.json").then(model => {
-      model.scale.set(0.25);   // escala
+      model.scale.set(0.25);   // escala del modelo
       model.x = window.innerWidth - 250;
       model.y = window.innerHeight - 400;
 
@@ -37,5 +37,3 @@
 
 </body>
 </html>
-
-
