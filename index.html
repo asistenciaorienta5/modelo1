@@ -5,41 +5,34 @@
   <title>Modelo Live2D</title>
   <style>
     body { margin: 0; background: #111; }
-    canvas { position: fixed; bottom: 20px; right: 20px; }
   </style>
 </head>
 <body>
-  <canvas id="live2dCanvas" width="300" height="400"></canvas>
-
-  <!-- PIXI.js y Live2D Widget Core -->
+  <!-- Live2D Widget Core -->
   <script src="https://unpkg.com/live2d-widget-core@latest/lib/L2Dwidget.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.8/dist/browser/pixi.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/live2d-widget-core@latest/dist/live2d.min.js"></script>
 
   <script>
-    const app = new PIXI.Application({
-      view: document.getElementById('live2dCanvas'),
-      autoStart: true,
-      backgroundAlpha: 0,
-      resizeTo: window
-    });
-
-    Live2D.init(app);
-
-    Live2D.loadModel({
+    L2Dwidget.init({
       model: {
-        json: "modelo.model3.json"
+        jsonPath: "modelo.model3.json", // Asegúrate de que esta ruta sea correcta
+        scale: 1
+      },
+      display: {
+        position: "right",
+        width: 150,
+        height: 300,
+        hOffset: 20,
+        vOffset: -20
+      },
+      mobile: {
+        show: true,
+        scale: 0.5
+      },
+      react: {
+        opacityDefault: 1,
+        opacityOnHover: 1
       }
-    }).then(model => {
-      app.stage.addChild(model);
-      model.interactive = true;
-      model.buttonMode = true;
-
-      model.on('pointerdown', () => {
-        model.motion("tap");
-      });
     });
   </script>
 </body>
 </html>
-
